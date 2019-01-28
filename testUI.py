@@ -22,9 +22,9 @@ class UI:
 		self.device.grid(row=1, column=0, padx=0, pady=0,columnspan=2)
 		
 	def startTest(self):
-		print (self.message)
 		self.testButton.config(text = "Stop test", command=self.stopTest)
+		print(self.device.current(), self.device.get())
 		
 	def stopTest(self):
-		print (self.message)
 		self.testButton.config(text = "Start test", command=self.startTest)
+		print(self.device.current(), self.device.get())
