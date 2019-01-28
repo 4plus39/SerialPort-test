@@ -1,8 +1,12 @@
-import sys
+'''
+language:	Python 2.7.15rc1
+Function:	communicate serial port via modem
+'''
 import platform
 import glob
 import serial
 import time
+import keyboard
 
 class SerialPort(object):
 	def __init__(self, name):
@@ -30,14 +34,14 @@ class SerialPort(object):
 				pass
 	
 	def list(self):
-		for x in range(len(self.device)):
-			print "number:", x, "   " , "device:", self.device[x]
+		for index in range(len(self.device)):
+			print "number:", index, "   " , "device:", self.device[index]
+			
+	def input(self):
+		self.name = self.device[int(raw_input("Input serial device number:"))]
 		
-	def config(self, baud_rate, time_out ):
-		self.port = serial.Serial(self.name, baud_rate, timeout = time_out)
-		
-	def open(self):
-		self.port.open
+	def config(self, b_rate, t_out):
+		self.port = serial.Serial(self.name, b_rate, timeout = t_out)
 		
 	def send(self):
 		self.port.write(str.encode('ATI\r'))
@@ -45,32 +49,35 @@ class SerialPort(object):
 	def read(self):
 		return self.port.readlines()
 
-class Frame(object):
-	pass
 
 test = SerialPort(None)
 
+# text mode interface
 print "-------------------------------------"
 test.scan()
 print "-------------------------------------"
 test.list()
+print ""
+test.input()
 print "-------------------------------------"
-'''
-for x in range(len(test.device)):
-	print x, test.device[x]
-'''
 
-test.name = test.device[int(raw_input("Input serial device number:"))]
-
-
-print (test.port.is_open)
+# serial port settings
 test.config(115200, 0.1)
-test.open()
-print (test.port.is_open)
+
+# show serial port settings
+if test.port.is_open == True:
+	print "Serial port =",test.name
+	print ("Baud rate = 115200")
+	print ("Time out = 0.1")
+
+print "-------------------------------------"
+print ("!!! ---Start test--- !!!")
 
 while True:
-	print ("Start test:")
 	test.send()
-	print(test.read())
+	#print(test.read())
 	time.sleep(0.1)
-
+	if keyboard.is_pressed('q'):
+		print ("!!! ---Quit test--- !!!")
+		print "-------------------------------------"
+		break
