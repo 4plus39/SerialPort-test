@@ -3,30 +3,27 @@ language:	Python 2.7.15rc1
 Function:	communicate serial port via modem
 '''
 
-from tkinter import *
 import time
 import keyboard
 import testIO
-import testUI
 
-test = testIO.SerialPort(None)
-
+serial = testIO.SerialPort(None)
 
 # text mode interface
 print "-------------------------------------"
-test.scan()
+serial.scan()
 print "-------------------------------------"
-test.list()
+serial.list()
 print ""
-test.input()
+serial.input()
 print "-------------------------------------"
 
 # serial port settings
-test.config(115200, 0.1)
+serial.config(115200, 0.1)
 
 # show serial port settings
-if test.port.is_open == True:
-	print "Serial port =",test.name
+if serial.port.is_open == True:
+	print "Serial port =",serial.name
 	print ("Baud rate = 115200")
 	print ("Time out = 0.1")
 
@@ -34,8 +31,8 @@ print "-------------------------------------"
 print ("!!! ---Start test--- !!!")
 
 while True:
-	test.send()
-	#print(test.read())
+	serial.send()
+	#print(serial.read())
 	time.sleep(0.1)
 	if keyboard.is_pressed('q'):
 		print ("!!! ---Quit test--- !!!")
