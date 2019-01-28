@@ -1,2 +1,2 @@
 # modem_test
-modem test
+(Ubuntu)sudo python main.py
