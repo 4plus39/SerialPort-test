@@ -11,14 +11,13 @@ class SerialPort(object):
 		
 	def scan(self):
 		if self.system.lower() == "linux":
-			print ("os:linux")
 			ports = glob.glob('/dev/tty[A-Za-z]*')
 		elif self.system.lower() == "windows":
-			print ("os:windows")
 			ports = ['COM%s' % (i + 1) for i in range(256)]
 		else:
 			print ("Unknown os")
 		
+		print "OS: " ,self.system
 		for port in ports:
 			try:
 				s = serial.Serial(port)

@@ -1,4 +1,4 @@
-from tkinter import *
+import tkinter as tk
 from tkinter import ttk
 
 class UI:
@@ -6,14 +6,14 @@ class UI:
 		master.title("test")
 		master.geometry("200x100")
 		
-		frame = Frame(master)
+		frame = tk.Frame(master)
 		frame.pack()
 		self.message = "Hello,world"
 		
-		self.testButton = Button(frame, text="Start Test", command=self.startTest)
+		self.testButton = tk.Button(frame, text="Start Test", command=self.startTest)
 		self.testButton.grid(row=0, column=0, padx=0, pady=10)
 		
-		self.quitButton = Button(frame, text="Quit", command=frame.quit)
+		self.quitButton = tk.Button(frame, text="Quit", command=frame.quit)
 		self.quitButton.grid(row=0, column=1, padx=0, pady=10)
 		
 		self.device = ttk.Combobox(frame, width=16)
@@ -23,8 +23,8 @@ class UI:
 		
 	def startTest(self):
 		self.testButton.config(text = "Stop test", command=self.stopTest)
-		print(self.device.current(), self.device.get())
+		#print(self.device.current(), self.device.get())
 		
 	def stopTest(self):
 		self.testButton.config(text = "Start test", command=self.startTest)
-		print(self.device.current(), self.device.get())
+		#print(self.device.current(), self.device.get())
