@@ -17,7 +17,7 @@ class SerialPort(object):
 		else:
 			print ("Unknown os")
 		
-		print "OS: " ,self.system
+		#print "OS: " ,self.system
 		for port in ports:
 			try:
 				s = serial.Serial(port)

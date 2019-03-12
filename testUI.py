@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 
+running = False  # Global flag
+
 class UI:
 	def __init__(self, master):
 		master.title("test")
@@ -23,8 +25,13 @@ class UI:
 		
 	def startTest(self):
 		self.testButton.config(text = "Stop test", command=self.stopTest)
+		global running
+		running = True
 		#print(self.device.current(), self.device.get())
 		
 	def stopTest(self):
 		self.testButton.config(text = "Start test", command=self.startTest)
+		global running
+		running = False
 		#print(self.device.current(), self.device.get())
+		
