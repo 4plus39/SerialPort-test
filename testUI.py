@@ -5,8 +5,8 @@ running = False  # Global flag
 
 class UI:
 	def __init__(self, master):
-		master.title("test")
-		master.geometry("200x100")
+		master.title("Serial Port Test  ")
+		master.geometry("200x90")
 		
 		frame = tk.Frame(master)
 		frame.pack()
