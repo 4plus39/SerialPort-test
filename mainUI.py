@@ -10,7 +10,7 @@ def scanning():
         serial.config(115200, 0.1)
         serial.send()
 
-    # After 1 second, call scanning again (create a recursive loop)
+    # After 0.1 second, call scanning again (create a recursive loop)
     root.after(100, scanning)
 
 serial = testIO.SerialPort(None)
@@ -21,5 +21,5 @@ root = tk.Tk()
 app = testUI.UI(root)
 app.device['values'] = serial.device
 
-root.after(100, scanning)  # After 1 second, call scanning
+root.after(100, scanning)  # After 0.1 second, call scanning
 root.mainloop()
