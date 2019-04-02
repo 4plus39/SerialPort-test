@@ -1,9 +1,12 @@
-# modem_test
-language:	Python 2.7.15rc1
-Function:	communicate serial port via modem
+modem_test
+modem_test is a tool for communication from SUT serial port to modem.
 
-Installation:
-$ sudo pip install pyserial
+Installation
+Use the package manager pip to install pyserial.
 
-Execute:
+pip install pyserial
+
+execution:
 $sudo python main.py
+
+language:	Python 2.7.15rc1
