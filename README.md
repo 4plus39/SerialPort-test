@@ -10,8 +10,9 @@ Use the package manager pip to install pyserial.
 
     pip install pyserial
 
-## execution:
+## execution
 ### Text mode
     sudo python main.py
 
 ### GUI mode
+    sudo python mainUI.py
