@@ -10,6 +10,9 @@ os: Ubunru 18.04
 Use the package manager pip to install pyserial.
 
     pip install pyserial
+Use the package manager apt to install tkinter.
+
+    sudo apt-get install python-tk
 
 ## execution
 ### Text mode
