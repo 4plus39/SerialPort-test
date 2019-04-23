@@ -4,9 +4,12 @@ modem_test is a tool for communication from SUT serial port to modem.
 ## Environment
 language: Python 2.7.15rc1
 
-os: Ubuntu 18.04, windows server 2012R2, 2016
+#### os
+* Ubuntu 18.04
+* windows server 2012R2
+* windows server 2016
 
-## Installation
+## Requirement
 Use the package manager pip to install pyserial.
 
     pip install pyserial

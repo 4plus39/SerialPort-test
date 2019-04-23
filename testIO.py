@@ -11,6 +11,7 @@ class SerialPort(object):
         self.system = platform.system()
 
     def scan(self):
+        ports = None
         if self.system.lower() == "linux":
             ports = glob.glob('/dev/tty[A-Za-z]*')
         elif self.system.lower() == "windows":
