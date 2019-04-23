@@ -2,14 +2,15 @@
 modem_test is a tool for communication from SUT serial port to modem.
 
 ## Environment
-language:	Python 2.7.15rc1
+language: Python 2.7.15rc1
 
-os: Ubuntu 18.04
+os: Ubuntu 18.04, windows server 2012R2, 2016
 
 ## Installation
 Use the package manager pip to install pyserial.
 
     pip install pyserial
+    pip install keyboard
 Use the package manager apt to install tkinter.
 
     sudo apt-get install python-tk

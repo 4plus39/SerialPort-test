@@ -1,5 +1,5 @@
-import tkinter as tk
-from tkinter import ttk
+import Tkinter as tk
+import ttk
 
 running = False  # Global flag
 
