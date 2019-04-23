@@ -4,7 +4,8 @@ import testUI
 
 
 def scanning():
-    if testUI.running:  # Only do this if the Stop button has not been clicked
+    # Only do this if the Stop button has not been clicked
+    if testUI.running:
         serial.name = app.device.get()
         serial.config(115200, 0.1)
         serial.send()
@@ -18,5 +19,7 @@ serial.scan()
 root = tk.Tk()
 app = testUI.UI(root)
 app.device['values'] = serial.device
-root.after(100, scanning)  # After 0.1 second, call scanning
+
+# After 0.1 second, call scanning
+root.after(100, scanning)
 root.mainloop()
