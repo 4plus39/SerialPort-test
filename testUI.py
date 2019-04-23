@@ -1,7 +1,8 @@
 import Tkinter as tk
 import ttk
 
-running = False  # Global flag
+# Global flag
+running = False
 
 
 class UI:
